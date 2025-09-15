@@ -4,8 +4,8 @@ import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
 
-df = pd.read_parquet('/Users/henryimmanuelsihombing/Documents/MNC AI/Completed Net Loss Ratio by Risk Code dan TSI Range2.parquet')
-
+url = "https://drive.google.com/file/d/1EUvHNcgg5rqznMFKA9lRmUSSX9eYqw0B/view?usp=sharing"
+df = pd.read_parquet(url, engine="pyarrow")
 
 # Simpan user hash di dictionary
 users = {
@@ -162,4 +162,5 @@ else:
 
     if st.button("Logout"):
         st.session_state.logged_in = False
+
         st.rerun()
